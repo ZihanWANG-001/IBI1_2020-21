@@ -1,12 +1,12 @@
 1.I like movies
 2.I like reading
 3.I like running
-4.
+4.I like potato chips very much
 5.I like ice-cream
-6.I like computer
+6.I like computer games
 7.I like biomedical science
-8.I like books very much
+8.I like books 
 9.I like shopping
-10.I like coffee
-12.I like
-13.I like 1
+10.I like coffee with milk
+12.I like studying coding
+
