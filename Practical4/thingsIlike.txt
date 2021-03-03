@@ -8,5 +8,5 @@
 8.I like books 
 9.I like shopping
 10.I like coffee with milk
-12.I like studying coding
+12.I like studying fun things
 
