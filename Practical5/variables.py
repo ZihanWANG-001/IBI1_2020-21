@@ -1,12 +1,18 @@
-a=110602
-b=190784
-c=100321
+#Some simple math
+a=110602  #My birthday
+b=190784  #Rob's birthday
+c=100321  #Today's date
 d=a-c
 e=b-a
 print('d=',d)
 print('e=',e)
-x=1
-y=2
-z=3
-z==(x and not y)or(y and not x)
+#Booleans
+x=True
+y=False
+z=(x and not y)or(y and not x)
+print(z)    #It is true if either x or y (but not both) are true. It is false if x and y are both true or both false.
+w=z!=y
+print(w)
+print(z==w) #To test if z and w are always the same.
+
 
