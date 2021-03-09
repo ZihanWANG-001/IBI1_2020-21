@@ -1,0 +1,17 @@
+In this reflection I will describe my experience during the practical.
+Too many things go wrong!
+Problems I met and my solutions:
+1.When I first use git commit, I need to add my name and email by 'git config --global user.name "name" and git config --global user.email "your email"'.But I tried several times and git still need me to do this. It turned out that I omit the space before ".
+2.After git revert HEAD, the vim editor would open. At first I didn't know how to close it. In the end, with the help of my instructor, I learned that to close vim, we should first press esc to exit the current editing, and then type ":x"(do not omit ":") at the bottom line.
+3.About git merge. When I merge Alex and Master, there are conflicts. And I think it should be like this because we did make two different version of "thingsIlike.txt" on two branches. And it was annoying because when conflicts occurs, we cannot do anything but fix the conflicts. Other commands are forbidden. I just logged out and reopened cygwin.
+4.I also learned from the error message that when we edit a file,or when the file is newly copyed from another directory, we cannot directly use "git commit -m"XXX"". We need to add this change to git first, using "git add".
+5.About the command "git checkout", I think it is very confusing as it makes me think of exiting this branch. Actually it means change to this branch.
+6.I cannot open github.com without the VPN. This means I cannot clone a repository from github to ZJE server. Some students successed, but I still not. I have to download the git application for windows (MacOS users have bulid-in terminal. How lucky they are!) and make everything again locally. I can clone the required repository to my computer instead of the server. Finally the problem is solved. This problem really cost me too many trouble.
+7.The default name of the master branch of the repo "USERNAME.github.io" changed from "master" to "main". This causes the command "git push origin master" changes to "git push origin main" accordingly. I thought this is because I'm in the local repository. But later I searched from the Internet that they say GitHub intentionally changes it because apart from meaning "main", the word "master" also means people who have servants. This is not very good because we already abolished slavery. This change took part on October,2020. Repositories created before this would remain unchange. It seems that "IBI1_2020-21" was created before that.
+8.When I tried to move a file from one repository to the other, I used "git add" and "git commit" on the wrong repository because my working directory didn't change. It is very important to know which repository you are in before you commit anything.
+9.I updated the index.md file with my own identity, but my homepage won't change. I cleared the cookies on my browser and it worked.  
+10.Update: Now I can connect to github.com! So I have made another copy of the repository on the ZJE server. Congratulations for me! It seems that github can be connected to without VPN but the connection is very unstable. It needs a bit of luck.
+<<<<<<< HEAD
+=======
+
+>>>>>>> c27d5b5735dca9bebd757ade113c24125638c886
