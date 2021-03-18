@@ -27,6 +27,7 @@ plt.boxplot(average_exon_length,#Use the data in "average_exon_length"
             flierprops=dict(color='yellow', markeredgecolor='orange'),
             medianprops=dict(color='mediumvioletred')
 			)
+plt.title('Average Exon Length')#Add a title to the boxplot
 plt.show() #Show the boxplot. Otherwise we cannot see it.
 			
 			
