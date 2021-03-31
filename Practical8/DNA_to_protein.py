@@ -109,4 +109,5 @@ aa_sequence=''
 for i in code:
 	aa_sequence=aa_sequence+dictionary[i]
 print(aa_sequence)
+print('The amino acid sequence is: '+aa_sequence)
 	
