@@ -1,3 +1,37 @@
+#Method one: using a dictionary
+import os
+import re
+os.chdir('E:')
+f=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')	
+#Create a dictionary to store the information.
+dic={}
+#Create an empty string to be used in the loop to add the DNA sequence.
+gene=''
+for line in f:
+	if line.startswith('>'):#Find the description lines.
+		key=line
+		gene=''#If the gene is changed (this means a line that satisfied the condition in "if"), then this string should be cleared. 
+		       #To prevent the sequence of different genes being added together.
+	else:
+		gene=gene+str(re.sub(r'\n','',line))#Delete \n at the end of the sequence. Make the sequence of the same gene together, being one line.
+		dic[key]=gene  #Match the sequence and the description using the "key:item" pattern in the dictionary.
+#Start to write the file.
+f2=open('test_unknown.fa','w')
+for key in dic.keys():  #Iterate all the keys in the dictionary.
+	if re.search(r'unknown function',key): #Find the unknown function.
+		x=str(re.findall(r'>(\S+)_{1}',key)).strip("'[]") #Extract the name and strip [' and '] of the name.
+		line1=x+'   '+str(len(dic[key]))+'\n'      #Join the name and the length and add \n at the end.
+		line2=dic[key]+'\n'                         #The sequence.
+		f2.write(line1)                             #write.
+		f2.write(line2)
+f2.close()
+f2=open('test_unknown.fa','r')
+print(f2.read())
+f2.close()
+
+
+
+#Method two
 import os
 import re
 os.chdir('E:')
@@ -21,6 +55,8 @@ gene=[]
 for line in f2:
 	if line.startswith('>'):
 		function.append(line)
+	elif line.startswith('\n'):
+		del(line)
 	else:
 		gene.append(line)
 f2.close()
@@ -36,7 +72,7 @@ for item in function:
 #Store the length of unknown function in list "length"
 length=[]
 for i in unknown_index:
-	length.append(len(gene[i]))
+	length.append(len(gene[i])-1)#Because there is a '\n' at the end of the line, we need to substrate 1 to get the real length.
 name=[]
 #Store the name of unknown function in list "name"
 for i in unknown_index:
@@ -61,10 +97,4 @@ for i in range(0,len(unknown_index)):
 	f3.write(f3line1)
 	f3.write(f3line2)
 f3.close()
-#Display the first 3 gene of unknown function.
-f3=open('unknown_function.fa','r')
-c=0
-while c<=5:
-	c+=1
-	print(f3.readline())
-f3.close()
+
