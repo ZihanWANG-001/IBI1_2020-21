@@ -13,6 +13,7 @@ for i in coronavirus:
 #Use plt.pie to draw the pie chart
 plt.pie(numbers,labels=labels,autopct='%1.1f%%',
 	shadow=False,startangle=90)
+plt.title('The Proportion of COVID-19 Infections in the Top Five Most Affected Countries')
 plt.axis('equal') #Ensure the pie chart is drawn as a circle
 #Show the dictionary
 print(coronavirus)
