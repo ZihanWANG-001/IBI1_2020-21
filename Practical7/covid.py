@@ -6,7 +6,7 @@ import pandas as pd
 
 #importing data
 #change to the the directiry where "full_data.csv" is stored.
-os.chdir("E:")
+#os.chdir("E:") For the marker's convience, I moved the file to the same directory as the python script.
 covid_data=pd.read_csv("full_data.csv")
 
 #showing all the columns, and every second row between (and including) 0 and 10. 
