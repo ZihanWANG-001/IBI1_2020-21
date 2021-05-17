@@ -1,6 +1,6 @@
 import re
 import os
-os.chdir('E:')
+#os.chdir('E:')For the marker's convience, I moved the file to the same directory as the python script.
 f=open('unknown_function.fa','r')
 #Separate the sequence and the name.
 #Store the name in list "name".
@@ -58,6 +58,7 @@ for i in amino:
 	#Open the file in read mode.
 	#Read the file to check whether there's anything goes wrong.
 #If the file doesn't end with ".fa", then print out a notification.
+#Please enter a fasta file!
 file_name=input('Enter a file name:')
 if file_name.endswith('.fa'):
 	f2=open(file_name,'w')
