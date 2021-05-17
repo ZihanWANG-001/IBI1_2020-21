@@ -1,7 +1,7 @@
 #Method one: using a dictionary
 import os
 import re
-os.chdir('E:')
+#os.chdir('E:') For the marker's convience, I moved the file to the same directory as the python script.
 f=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')	
 #Create a dictionary to store the information.
 dic={}
@@ -16,7 +16,7 @@ for line in f:
 		gene=gene+str(re.sub(r'\n','',line))#Delete \n at the end of the sequence. Make the sequence of the same gene together, being one line.
 		dic[key]=gene  #Match the sequence and the description using the "key:item" pattern in the dictionary.
 #Start to write the file.
-f2=open('test_unknown.fa','w')
+f2=open('unknown_function.fa','w')
 for key in dic.keys():  #Iterate all the keys in the dictionary.
 	if re.search(r'unknown function',key): #Find the unknown function.
 		x=str(re.findall(r'>(\S+)_{1}',key)).strip("'[]") #Extract the name and strip [' and '] of the name.
@@ -25,7 +25,7 @@ for key in dic.keys():  #Iterate all the keys in the dictionary.
 		f2.write(line1)                             #write.
 		f2.write(line2)
 f2.close()
-f2=open('test_unknown.fa','r')
+f2=open('unknown_function.fa','r')
 print(f2.read())
 f2.close()
 
@@ -34,9 +34,9 @@ f2.close()
 #Method two
 import os
 import re
-os.chdir('E:')
+#os.chdir('E:') For the marker's convience, I moved the file to the same directory as the python script.
 f=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')		
-f2=open('edited.fa','w')
+f2=open('temp.fa','w')
 #Delete unwanted \n, that is, the \n at the end of the gene sequence.
 #To avoid mixing of sequence and description (because the \n of the last line of a gene's sequence has been deleted), add \n at the beginning of the description. 
 for line in f:
@@ -48,7 +48,7 @@ for line in f:
 		f2.write(line2)
 f.close()
 f2.close()
-f2=open('edited.fa','r')
+f2=open('temp.fa','r')
 function=[]
 gene=[]
 #Separate gene sequence and description. Store them  in separete lists.
