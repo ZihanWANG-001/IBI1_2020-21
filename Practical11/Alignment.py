@@ -1,7 +1,7 @@
 import os
 import re
 import pandas as pd
-os.chdir('E:')
+#os.chdir('E:') For the marker's convience, I moved the file to the same directory as the python script.
 #Read three files and store the sequence in a string
 f1=open('SOD2_human.fa')
 human=''
