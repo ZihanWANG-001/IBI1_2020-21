@@ -75,6 +75,7 @@ size=[a1,a2,a3,a4]
 plt.label=('Number of childNodes')
 plt.pie(size,labels=labels,autopct='%1.1f%%',shadow=False,startangle=90)
 plt.axis('equal')
+plt.title('Percentage of Childnodes')
 plt.show()
 
 				
