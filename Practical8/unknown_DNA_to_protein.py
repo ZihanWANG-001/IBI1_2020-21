@@ -1,6 +1,6 @@
 import re
 import os
-#os.chdir('E:')For the marker's convience, I moved the file to the same directory as the python script.
+os.chdir('E:') #Please change this directory to where the file is stored in your computer, or delete this line and move the file to the same directory as this script.
 f=open('unknown_function.fa','r')
 #Separate the sequence and the name.
 #Store the name in list "name".
