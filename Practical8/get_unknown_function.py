@@ -1,7 +1,7 @@
 #Method one: using a dictionary
 import os
 import re
-#os.chdir('E:') For the marker's convience, I moved the file to the same directory as the python script.
+os.chdir('E:') #Please change this directory to where the file is stored in your computer, or delete this line and move the file to the same directory as this script.
 f=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')	
 #Create a dictionary to store the information.
 dic={}
@@ -34,7 +34,7 @@ f2.close()
 #Method two
 import os
 import re
-#os.chdir('E:') For the marker's convience, I moved the file to the same directory as the python script.
+os.chdir('E:') #Please change this directory to where the file is stored in your computer, or delete this line and move the file to the same directory as this script.
 f=open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa','r')		
 f2=open('temp.fa','w')
 #Delete unwanted \n, that is, the \n at the end of the gene sequence.
