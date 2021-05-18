@@ -41,11 +41,13 @@ def childNode_finder(x):
 				count+=1
 				number+=1
 				childNodeid.append(is_as[k].parentNode.childNodes[1])
+	print(number)
 	if count!=0:
 		x=childNodeid
 		childNode_finder(x) #recursion, use the childnodes found as the new parent nodes.
 	else:                   #count=0 means there is no such id in <is_a>, so it has no child, it is the end of the node tree.
 		return number
+	
 		
 number=0
 childNode_finder(dna)
